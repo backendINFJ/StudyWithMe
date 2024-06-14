@@ -1,10 +1,14 @@
 package december.spring.studywithme.entity;
 
 import com.navercorp.fixturemonkey.FixtureMonkey;
+import com.navercorp.fixturemonkey.api.introspector.ConstructorPropertiesArbitraryIntrospector;
 import com.navercorp.fixturemonkey.api.introspector.FieldReflectionArbitraryIntrospector;
+import com.navercorp.fixturemonkey.jackson.generator.JacksonArbitraryGenerator;
+import net.jqwik.api.Arbitraries;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.navercorp.fixturemonkey.api.experimental.JavaGetterMethodPropertySelector.javaGetter;
 import static org.assertj.core.api.BDDAssertions.then;
 
 
@@ -133,4 +137,3 @@ public class FixtureMonkeyUserTest {
         then(user.getPassword()).isEqualTo("5678");
     }
 }
-
