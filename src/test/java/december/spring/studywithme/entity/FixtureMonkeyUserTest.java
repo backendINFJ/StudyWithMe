@@ -127,10 +127,10 @@ public class FixtureMonkeyUserTest {
                 .set("password", "1234")
                 .sample();
 
-        user.changePassword("1234");
+        user.changePassword("5678");
 
         // then
-        then(user.getPassword()).isEqualTo("1234");
+        then(user.getPassword()).isEqualTo("5678");
     }
 }
 
