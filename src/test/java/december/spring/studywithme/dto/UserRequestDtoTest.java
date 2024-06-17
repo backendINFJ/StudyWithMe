@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserRequestDTO {
+public class UserRequestDtoTest {
 
 
     private String email;
@@ -27,7 +27,7 @@ public class UserRequestDTO {
     void createUserTest() {
 
         //given
-        UserRequestDTO userRequestDTO = new UserRequestDTO();
+        UserRequestDtoTest userRequestDtoTest = new UserRequestDtoTest();
 
         String userID = "yj123456789";
         String password = "Test1234!@";
@@ -36,18 +36,16 @@ public class UserRequestDTO {
         String introduce = "테스트 입니다~";
 
         //when
-        userRequestDTO.setUserId(userID);
-        userRequestDTO.setPassword(password);
-        userRequestDTO.setName(name);
-        userRequestDTO.setEmail(email);
-        userRequestDTO.setIntroduce(introduce);
+        userRequestDtoTest.setPassword(password);
+        userRequestDtoTest.setName(name);
+        userRequestDtoTest.setEmail(email);
+        userRequestDtoTest.setIntroduce(introduce);
 
         //then
-        assertEquals(userID, userRequestDTO.getUserId());
-        assertEquals(password, userRequestDTO.getPassword());
-        assertEquals(name, userRequestDTO.getName());
-        assertEquals(email, userRequestDTO.getEmail());
-        assertEquals(introduce, userRequestDTO.getIntroduce());
+        assertEquals(password, userRequestDtoTest.getPassword());
+        assertEquals(name, userRequestDtoTest.getName());
+        assertEquals(email, userRequestDtoTest.getEmail());
+        assertEquals(introduce, userRequestDtoTest.getIntroduce());
     }
 
 
@@ -85,11 +83,4 @@ public class UserRequestDTO {
         this.password = password;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 }
